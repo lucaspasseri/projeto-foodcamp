@@ -1,5 +1,5 @@
-h1 {
-    color: red;
+* {
+    box-sizing: border-box;
 }
 
 div {
@@ -10,32 +10,61 @@ div {
     height: 92px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-left: 21px;
     color: #FFF;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.topo span:first-of-type {
+    font-family: 'Righteous', cursive;
+    font-size:  44px;
+}
+.topo span:last-of-type {
+    font-family: 'Roboto', sans-serif;
+    font-size:  18px;
+}
+h1 {
+    font-family: 'Righteous', cursive;
+}
 
+.fundo {
+    font-family: 'Roboto', sans-serif;
+}
 .corpo {
     height: 700px;
     background-color: #e5e5e5;
     margin-top: 92px;
 }
 
-.cardapio {
+.principal li, .bebida li, .sobremesa li {
+    font-family: 'Roboto', sans-serif;
+    width: 172px;
 }
-.principal {
+
+.principal, .bebida, .sobremesa {
     display: flex;
 }
-.bebida {
-    display: flex;
-}
-.sobremesa {
-    display: flex;
+.principal img, .bebida img, .sobremesa img {
+    height: 87px;
 }
 .fundo  {
     height: 92px;
     background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 364px;
+    height: 61px;
+    background-color: #cbcbcb;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 20px;
 }
