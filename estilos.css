@@ -2,10 +2,16 @@
     box-sizing: border-box;
 }
 
+:root {
+    --tela-mobile: 600px;
+    --vermelho-foodcamp: #CF2B2B;
+    --cor-corpo: #e5e5e5;
+    --verde-confirmacao: #32B72F;
+  }
 .topo {
-    background-color: #CF2B2B;
+    background-color: var(--vermelho-foodcamp);
     height: 92px;
-    width: 600px;
+    width: var(--tela-mobile);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,17 +57,17 @@ h3 {
 }
 ion-icon {
     font-size: 16px;
-    color: #32B72F;
+    color: var(--verde-confirmacao);
     display: inline-flex;
 }
 .fundo {
     font-family: 'Roboto', sans-serif;
 }
 .corpo {
-    width: 600px;
-    background-color: #e5e5e5;
+    width: var(--tela-mobile);
+    background-color: var(--cor-corpo);
     margin-top: 92px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--cor-corpo);
 }
 
 .cardapio {
@@ -74,7 +80,7 @@ ion-icon {
     background-color: #FFF;
     margin-right: 25px;
     border-radius: 15px;
-    box-shadow: inset 0px 0px 0px 6px #32B72F;
+    box-shadow: inset 0px 0px 0px 6px var(--verde-confirmacao);
 }
 .principal li div div, .bebida li div div, .sobremesa li div div {
     display: flex;
@@ -96,11 +102,12 @@ ion-icon {
 
 .fundo  {
     height: 92px;
+    width: var(--tela-mobile);
     background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    border: 1px solid var(--cor-corpo);
 }
 button {
     width: 364px;
