@@ -2,22 +2,19 @@
     box-sizing: border-box;
 }
 
-div {
-    border: 1px solid lightgreen;
-}
 .topo {
     background-color: #CF2B2B;
     height: 92px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 21px;
+    padding-left: 40px;
     color: #FFF;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .topo span:first-of-type {
@@ -30,36 +27,81 @@ div {
 }
 h1 {
     font-family: 'Righteous', cursive;
+    font-size: 26px;
 }
 
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+.descricao {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #a6a6a6;
+    font-weight: 300;
+    display: inline-flex;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+.preco {
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-flex;
+}
+ion-icon {
+    font-size: 16px;
+    color: #32B72F;
+    display: inline-flex;
+}
 .fundo {
     font-family: 'Roboto', sans-serif;
 }
 .corpo {
-    height: 700px;
+    width: 600px;
     background-color: #e5e5e5;
     margin-top: 92px;
+    border: 1px solid #e5e5e5;
+}
+
+.cardapio {
+    margin-top: 40px;
+    margin-left: 40px;
 }
 
 .principal li, .bebida li, .sobremesa li {
     font-family: 'Roboto', sans-serif;
-    width: 172px;
+    background-color: #FFF;
+    margin-right: 25px;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 0px 6px #32B72F;
 }
-
+.principal li div div, .bebida li div div, .sobremesa li div div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 15px 15px;
+}
 .principal, .bebida, .sobremesa {
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 .principal img, .bebida img, .sobremesa img {
-    height: 87px;
+    height: 120px;
+    width: 180px;
+    padding: 20px 15px 10px 15px;
+    border-radius: 15px;
 }
+
 .fundo  {
     height: 92px;
     background-color: #FFF;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 600px;
 }
-
 button {
     width: 364px;
     height: 61px;
@@ -67,4 +109,6 @@ button {
     border-radius: 50px;
     color: #fff;
     font-size: 20px;
+    border: none;
+    padding: 5px 80px;
 }
