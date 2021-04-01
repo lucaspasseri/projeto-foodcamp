@@ -124,7 +124,7 @@ ion-icon {
 button {
     width: 364px;
     height: 61px;
-    background-color: #cbcbcb;
+    background-color: var(--verde-confirmacao);
     border-radius: 50px;
     color: #fff;
     font-size: 20px;
@@ -138,4 +138,7 @@ button {
 
 .desativar-icone{
     display: none;
+}
+.desativar-botao{
+    background-color: #cbcbcb;
 }
