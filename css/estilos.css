@@ -132,6 +132,10 @@ button {
     padding: 5px 80px;
 }
 
-.desativado{
+.desativar-produto{
     box-shadow: none;
+}
+
+.desativar-icone{
+    display: none;
 }
