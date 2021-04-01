@@ -2,9 +2,10 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodCamp</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
             <h1>Primeiro, seu prato</h1>
             <ol class="principal">
               <li>
-                <div>
+                <div class="produto-principal desativado" onclick="selecionar_principal(this)">
                   <img src="./arqv/frango-xadrez.jpg" alt="">
                   <h3>Frango Xadrez</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
@@ -31,7 +32,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-principal desativado" onclick="selecionar_principal(this)">
                   <img src="./arqv/bife-acebolado.jpg" alt="">
                   <h3>Bife Acebolado</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
@@ -42,7 +43,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-principal desativado" onclick="selecionar_principal(this)">
                   <img src="./arqv/yakisoba.jpg" alt="">
                   <h3>Yakisoba</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
@@ -58,7 +59,7 @@
             <h1>Agora, sua bebida</h1>
             <ol class="bebida">
               <li>
-                <div>
+                <div class="produto-bebida desativado" onclick="selecionar_bebida(this)">
                   <img src="./arqv/agua.png" alt="">
                   <h3>Água 330ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
@@ -69,7 +70,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-bebida desativado" onclick="selecionar_bebida(this)">
                   <img src="./arqv/suco.jpg" alt="">
                   <h3>Suco 350ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
@@ -80,7 +81,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-bebida desativado" onclick="selecionar_bebida(this)">
                   <img src="./arqv/refri.jpg" alt="">
                   <h3>Refrigerante 350ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
@@ -96,7 +97,7 @@
             <h1>Por fim, sua sobremesa</h1>
             <ol class="sobremesa">
               <li>
-                <div>
+                <div class="produto-sobremesa desativado" onclick="selecionar_sobremesa(this)">
                   <img src="./arqv/pudim.jpg" alt="">
                   <h3>Pudim</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
@@ -107,7 +108,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-sobremesa desativado" onclick="selecionar_sobremesa(this)">
                   <img src="./arqv/mousse.jpg" alt="">
                   <h3>Mousse de Maracujá</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
@@ -118,7 +119,7 @@
                 </div>
               </li>
               <li>
-                <div>
+                <div class="produto-sobremesa desativado" onclick="selecionar_sobremesa(this)">
                   <img src="./arqv/petit.jpg" alt="">
                   <h3>Petit Gateau</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
@@ -136,5 +137,6 @@
       <button>Selecione os 3 itens para finalizar o pedido</button>
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>

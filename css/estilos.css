@@ -80,7 +80,19 @@ ion-icon {
     background-color: #FFF;
     margin-right: 25px;
     border-radius: 15px;
-    box-shadow: inset 0px 0px 0px 6px var(--verde-confirmacao);
+}
+
+.produto-principal {
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
+}
+.produto-bebida {
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
+}
+.produto-sobremesa {
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
 }
 .principal li div div, .bebida li div div, .sobremesa li div div {
     display: flex;
@@ -118,4 +130,8 @@ button {
     font-size: 20px;
     border: none;
     padding: 5px 80px;
+}
+
+.desativado{
+    box-shadow: none;
 }
