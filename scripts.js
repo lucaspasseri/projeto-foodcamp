@@ -137,15 +137,19 @@ function fechar_pedido(){
     const bebida_selecionado = bebida[index_bebida];
     const sobremesa_selecionado = sobremesa[index_sobremesa];
 
-    const principal_valor = parseFloat(principal_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
+    const principal_valor = parseFloat(principal_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));   
     const bebida_valor = parseFloat(bebida_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
     const sobremesa_valor = parseFloat(sobremesa_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
     const final_valor = (Number(principal_valor.toFixed(2)) + Number(bebida_valor.toFixed(2)) + Number(sobremesa_valor.toFixed(2))).toFixed(2);
 
-    const pedido_linha1 = "Olá, gostaria de fazer o pedido:"; //%0D%0A
-    const pedido_linha2 = "- Prato: " + principal_selecionado.querySelector("h3").innerHTML;
-    const pedido_linha3 = "- Bebida: " + bebida_selecionado.querySelector("h3").innerHTML;
-    const pedido_linha4 = "- Sobremesa: " + sobremesa_selecionado.querySelector("h3").innerHTML;
+    const principal_nome = principal_selecionado.querySelector("h3").innerHTML;
+    const bebida_nome = bebida_selecionado.querySelector("h3").innerHTML;
+    const sobremesa_nome = sobremesa_selecionado.querySelector("h3").innerHTML;
+
+    const pedido_linha1 = "Olá, gostaria de fazer o pedido:";
+    const pedido_linha2 = "- Prato: " + principal_nome;
+    const pedido_linha3 = "- Bebida: " + bebida_nome;
+    const pedido_linha4 = "- Sobremesa: " + sobremesa_nome;
     const pedido_linha5 = "Total: R$ " + final_valor;
 
     const mensagem_linha1 = encodeURIComponent(pedido_linha1);
@@ -158,6 +162,33 @@ function fechar_pedido(){
     + "%0D%0A" + mensagem_linha4 + "%0D%0A" + mensagem_linha5; 
 
     if(tudo_pronto){
-        window.open("https://wa.me/5521986201196?text=" + mensagem);
+        const seletor_confirmacao = document.querySelector(".confirmar-pedido");
+        seletor_confirmacao.classList.toggle("esconder");
+        const principal_confirmacao_nome = seletor_confirmacao.querySelector("li:first-of-type span:first-of-type");
+        const principal_confirmacao_valor = seletor_confirmacao.querySelector("li:first-of-type span:last-of-type");
+        const bebida_confirmacao_nome = seletor_confirmacao.querySelector("li:nth-of-type(2) span:first-of-type");
+        const bebida_confirmacao_valor = seletor_confirmacao.querySelector("li:nth-of-type(2) span:last-of-type");
+        const sobremesa_confirmacao_nome = seletor_confirmacao.querySelector("li:nth-of-type(3) span:first-of-type");
+        const sobremesa_confirmacao_valor = seletor_confirmacao.querySelector("li:nth-of-type(3) span:last-of-type");
+        const final_valor_confirmacao = seletor_confirmacao.querySelector("li:nth-of-type(4) span:last-of-type");
+
+        principal_confirmacao_nome.innerHTML = principal_nome;
+        principal_confirmacao_valor.innerHTML = principal_valor.toFixed(2);
+        bebida_confirmacao_nome.innerHTML = bebida_nome;
+        bebida_confirmacao_valor.innerHTML = bebida_valor.toFixed(2);
+        sobremesa_confirmacao_nome.innerHTML = sobremesa_nome;
+        sobremesa_confirmacao_valor.innerHTML = sobremesa_valor.toFixed(2);
+        final_valor_confirmacao.innerHTML = final_valor;
     }
+
+    return mensagem;
+}
+
+function finalizar_confirmar(){
+    const mensagem = fechar_pedido();
+    window.open("https://wa.me/5521986201196?text=" + mensagem);
+}
+function finalizar_cancelar(){
+    const seletor_confirmacao = document.querySelector(".confirmar-pedido");
+    seletor_confirmacao.classList.toggle("esconder");
 }

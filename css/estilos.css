@@ -3,7 +3,7 @@
 }
 
 :root {
-    --tela-mobile: 600px;
+    --width-mobile: 600px;
     --vermelho-foodcamp: #CF2B2B;
     --cor-corpo: #e5e5e5;
     --verde-confirmacao: #32B72F;
@@ -11,7 +11,7 @@
 .topo {
     background-color: var(--vermelho-foodcamp);
     height: 92px;
-    width: var(--tela-mobile);
+    width: var(--width-mobile);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +64,7 @@ ion-icon {
     font-family: 'Roboto', sans-serif;
 }
 .corpo {
-    width: var(--tela-mobile);
+    width: var(--width-mobile);
     background-color: var(--cor-corpo);
     margin-top: 92px;
     border: 1px solid var(--cor-corpo);
@@ -114,7 +114,7 @@ ion-icon {
 
 .fundo  {
     height: 92px;
-    width: var(--tela-mobile);
+    width: var(--width-mobile);
     background-color: #FFF;
     display: flex;
     justify-content: center;
@@ -131,7 +131,6 @@ button {
     border: none;
     padding: 5px 80px;
 }
-
 .desativar-produto{
     box-shadow: none;
 }
@@ -142,3 +141,38 @@ button {
 .desativar-botao{
     background-color: #cbcbcb;
 }
+.confirmar-pedido {
+    height: 1072px;
+    width: var(--width-mobile);
+    background-color: #FFFFFFD0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.esconder {
+    z-index: -1;
+}
+.confirmar-pedido > div {
+    width: 377px;
+    height: 353px;
+    background-color: #50D074;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: calc((1072px - 353px)/2);
+    border-radius: 9px;
+}
+.confirmar-pedido h4 {
+    display: flex;
+    justify-content: center;
+}
+.confirmar-pedido li {
+    display: flex;
+    justify-content: space-between;
+}
+.confirmar-pedido div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.botao-confirmacao {}

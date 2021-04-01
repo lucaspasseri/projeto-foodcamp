@@ -136,6 +136,21 @@
     <div class="fundo">
       <button class="desativar-botao" onclick="fechar_pedido()">Selecione os 3 itens para finalizar o pedido</button>
     </div>
+    <div class="confirmar-pedido esconder">
+        <div>
+            <h4>Confirme seu pedido</h4>
+            <ol>
+              <li><span>Prato principal</span><span>valor</span></li>
+              <li><span>Bebida</span><span>valor</span></li>
+              <li><span>Sobremesa</span><span>valor</span></li>
+              <li><span>Total</span><span>valor</span></li>
+            </ol>
+            <div>
+              <span class="botao-confirmacao" onclick="finalizar_confirmar()">Tudo certo, pode pedir!</span>
+              <span onclick="finalizar_cancelar()">Cancelar</span>
+            </div>
+        </div>
+    </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="scripts.js"></script>
   </body>
