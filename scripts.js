@@ -109,9 +109,12 @@ function finalizar_pedido(){
     if ((produto_principal_selecionado === true) && (produto_bebida_selecionado === true) && (produto_sobremesa_selecionado === true)){
         botao.classList.remove("desativar-botao");
         botao.innerHTML = "Fechar pedido";
+        botao.style.fontWeight = "700";
         saida.push(true);
     }else {
         botao.classList.add("desativar-botao");
+        botao.innerHTML = "Selecione os 3 itens para fechar o pedido";
+        botao.style.fontWeight = "400";
         saida.push(false);
     }
     

@@ -7,6 +7,8 @@
     --vermelho-foodcamp: #CF2B2B;
     --cor-corpo: #e5e5e5;
     --verde-confirmacao: #32B72F;
+    --fonte-roboto: 'Roboto', sans-serif;
+    --fonte-righteous: 'Righteous', cursive;
   }
 .topo {
     background-color: var(--vermelho-foodcamp);
@@ -24,15 +26,15 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .topo span:first-of-type {
-    font-family: 'Righteous', cursive;
+    font-family: var(--fonte-righteous);
     font-size:  44px;
 }
 .topo span:last-of-type {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fonte-roboto);
     font-size:  18px;
 }
 h1 {
-    font-family: 'Righteous', cursive;
+    font-family: var(--fonte-righteous);
     font-size: 26px;
 }
 
@@ -42,7 +44,7 @@ h3 {
     margin-left: 15px;
 }
 .descricao {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fonte-roboto);
     font-size: 15px;
     color: #a6a6a6;
     font-weight: 300;
@@ -61,7 +63,7 @@ ion-icon {
     display: inline-flex;
 }
 .fundo {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fonte-roboto);
 }
 .corpo {
     width: var(--width-mobile);
@@ -76,7 +78,7 @@ ion-icon {
 }
 
 .principal li, .bebida li, .sobremesa li {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fonte-roboto);
     background-color: #FFF;
     margin-right: 25px;
     border-radius: 15px;
@@ -130,6 +132,7 @@ button {
     font-size: 20px;
     border: none;
     padding: 5px 80px;
+    outline: none;
 }
 .desativar-produto{
     box-shadow: none;
@@ -144,11 +147,13 @@ button {
 .confirmar-pedido {
     height: 1072px;
     width: var(--width-mobile);
-    background-color: #FFFFFFD0;
+    background-color: #FFFFFFDD;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+    font-family: var(--fonte-roboto);
+    font-size: 22px;
 }
 .esconder {
     z-index: -1;
@@ -161,18 +166,40 @@ button {
     margin-right: auto;
     margin-top: calc((1072px - 353px)/2);
     border-radius: 9px;
+    padding: 20px 25px;
+    font-size: 22px;
+    color: #fff;
 }
 .confirmar-pedido h4 {
     display: flex;
     justify-content: center;
+    font-weight: 700;
+    margin-bottom: 30px;
 }
 .confirmar-pedido li {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
+}
+.confirmar-pedido li:last-of-type {
+    font-weight: 700;
 }
 .confirmar-pedido div > div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: 700;
 }
-.botao-confirmacao {}
+.confirmar-pedido div > div span {
+    font-size: 20px;
+    margin-top: 18px;
+}
+.botao-confirmacao {
+    width: 333px;
+    height: 52px;
+    background-color: #fff;
+    color: #50D074;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+}
