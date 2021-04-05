@@ -51,6 +51,7 @@ h3 {
     display: inline-flex;
     margin-left: 15px;
     margin-top: 6px;
+    height: 45px;
 }
 .preco {
     font-size: 16px;
@@ -62,9 +63,7 @@ ion-icon {
     color: var(--verde-confirmacao);
     display: inline-flex;
 }
-.fundo {
-    font-family: var(--fonte-roboto);
-}
+
 .corpo {
     width: var(--width-mobile);
     background-color: var(--cor-corpo);
@@ -82,20 +81,14 @@ ion-icon {
     background-color: #FFF;
     margin-right: 25px;
     border-radius: 15px;
+    height: 230px;
 }
 
-.produto-principal {
+.produto {
     border-radius: 15px;
     box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
 }
-.produto-bebida {
-    border-radius: 15px;
-    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
-}
-.produto-sobremesa {
-    border-radius: 15px;
-    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
-}
+
 .principal li div div, .bebida li div div, .sobremesa li div div {
     display: flex;
     justify-content: space-between;
@@ -122,6 +115,7 @@ ion-icon {
     justify-content: center;
     align-items: center;
     border: 1px solid var(--cor-corpo);
+    font-family: var(--fonte-roboto);
 }
 button {
     width: 364px;

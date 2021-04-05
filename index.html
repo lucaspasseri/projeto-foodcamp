@@ -21,29 +21,29 @@
             <h1>Primeiro, seu prato</h1>
             <ol class="principal">
               <li>
-                <div class="produto-principal desativar-produto" onclick="selecionar_principal(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.principal', '0')">
                   <img src="./arqv/frango-xadrez.jpg" alt="">
                   <h3>Frango Xadrez</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
                   <div>
-                    <span class="preco">R$ <span>19,90</span></span>
+                    <span class="preco">R$ <span>21,90</span></span>
                     <ion-icon class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
               </li>
               <li>
-                <div class="produto-principal desativar-produto" onclick="selecionar_principal(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.principal', '1')">
                   <img src="./arqv/bife-acebolado.jpg" alt="">
                   <h3>Bife Acebolado</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
                   <div>
-                    <span class="preco">R$ <span>19,90</span></span>
+                    <span class="preco">R$ <span>23,90</span></span>
                     <ion-icon  class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
               </li>
               <li>
-                <div class="produto-principal desativar-produto" onclick="selecionar_principal(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.principal', '2')">
                   <img src="./arqv/yakisoba.jpg" alt="">
                   <h3>Yakisoba</h3>
                   <span class="descricao">Um pouco disso, outro pouco daquilo e mais nada</span>
@@ -59,7 +59,7 @@
             <h1>Agora, sua bebida</h1>
             <ol class="bebida">
               <li>
-                <div class="produto-bebida desativar-produto" onclick="selecionar_bebida(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.bebida', '0')">
                   <img src="./arqv/agua.png" alt="">
                   <h3>Água 330ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
@@ -70,7 +70,7 @@
                 </div>
               </li>
               <li>
-                <div class="produto-bebida desativar-produto" onclick="selecionar_bebida(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.bebida', '1')">
                   <img src="./arqv/suco.jpg" alt="">
                   <h3>Suco 350ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
@@ -81,12 +81,12 @@
                 </div>
               </li>
               <li>
-                <div class="produto-bebida desativar-produto" onclick="selecionar_bebida(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.bebida', '2')">
                   <img src="./arqv/refri.jpg" alt="">
                   <h3>Refrigerante 350ml</h3>
                   <span class="descricao">Mata sua sede e sua vontade de beber</span>
                   <div>
-                    <span class="preco">R$ <span>4,90</span></span>
+                    <span class="preco">R$ <span>5,50</span></span>
                     <ion-icon class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
@@ -97,34 +97,34 @@
             <h1>Por fim, sua sobremesa</h1>
             <ol class="sobremesa">
               <li>
-                <div class="produto-sobremesa desativar-produto" onclick="selecionar_sobremesa(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.sobremesa', '0')">
                   <img src="./arqv/pudim.jpg" alt="">
                   <h3>Pudim</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
                   <div>
-                    <span class="preco">R$ <span>12,90</span></span>
+                    <span class="preco">R$ <span>14,90</span></span>
                     <ion-icon class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
               </li>
               <li>
-                <div class="produto-sobremesa desativar-produto" onclick="selecionar_sobremesa(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.sobremesa', '1')">
                   <img src="./arqv/mousse.jpg" alt="">
                   <h3>Mousse de Maracujá</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
                   <div>
-                    <span class="preco">R$ <span>10,90</span></span>
+                    <span class="preco">R$ <span>11,90</span></span>
                     <ion-icon class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
               </li>
               <li>
-                <div class="produto-sobremesa desativar-produto" onclick="selecionar_sobremesa(this)">
+                <div class="produto desativar-produto" onclick="selecionar('.sobremesa', '2')">
                   <img src="./arqv/petit.jpg" alt="">
                   <h3>Petit Gateau</h3>
                   <span class="descricao">Adoça sua boca e sua vida, aprecie com moderação</span>
                   <div>
-                    <span class="preco">R$ <span>14,90</span></span>
+                    <span class="preco">R$ <span>16,90</span></span>
                     <ion-icon class="desativar-icone" name="checkmark-circle"></ion-icon>
                   </div>
                 </div>
@@ -134,7 +134,7 @@
         </ol>
     </div>
     <div class="fundo">
-      <button class="desativar-botao" onclick="fechar_pedido()">Selecione os 3 itens para fechar o pedido</button>
+      <button class="desativar-botao" onclick="fecharPedido()">Selecione os 3 itens para fechar o pedido</button>
     </div>
     <div class="confirmar-pedido esconder">
         <div>
@@ -146,12 +146,12 @@
               <li><span>Total</span><span>valor</span></li>
             </ol>
             <div>
-              <div class="botao-confirmacao" onclick="finalizar_confirmar()">Tudo certo, pode pedir!</div>
-              <span onclick="finalizar_cancelar()">Cancelar</span>
+              <div class="botao-confirmacao" onclick="finalizarConfirmar()">Tudo certo, pode pedir!</div>
+              <span onclick="finalizarCancelar()">Cancelar</span>
             </div>
         </div>
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="scripts.js"></script>
+    <script src="./js/scripts.js"></script>
   </body>
 </html>

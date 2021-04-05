@@ -1,112 +1,69 @@
-function selecionar_principal(elemento){
+function selecionar(categoria, index){
 
-    const produtos = document.querySelectorAll(".produto-principal");
-    const icones = document.querySelectorAll(".produto-principal ion-icon");
-
-    const produto_icone = elemento.querySelector("ion-icon");
-
-    const elemento_ativado = !elemento.classList.contains("desativar-produto");
+    console.log(categoria);
+    console.log(index);
     
-    if(elemento_ativado){
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
-    } else {
-        
-        for(let i = 0; i < produtos.length; i++){
-            if (!produtos[i].classList.contains("desativar-produto")){
-                produtos[i].classList.toggle("desativar-produto");
-                icones[i].classList.toggle("desativar-icone");
-            }
+    const selecionarCategoria = document.querySelector(categoria);
+    const selecionarProdutos = selecionarCategoria.querySelectorAll(" li > div"); 
+    const selecionarProduto = selecionarProdutos[index];
+
+    const selecionarIcones = selecionarCategoria.querySelectorAll(" li > div ion-icon");
+    const selecionarIcone = selecionarIcones[index];
+
+    if (selecionarProduto.classList.contains("desativar-produto")){
+        for(let i = 0; i < selecionarProdutos.length; i++){
+            if(!selecionarProdutos[i].classList.contains("desativar-produto")){
+                selecionarProdutos[i].classList.toggle("desativar-produto");
+                selecionarIcones[i].classList.toggle("desativar-icone")
+            } 
         }
-        
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
-    }
-    finalizar_pedido();
-}
-function selecionar_bebida(elemento){
-
-    const produtos = document.querySelectorAll(".produto-bebida");
-    const icones = document.querySelectorAll(".produto-bebida ion-icon");
-
-    const produto_icone = elemento.querySelector("ion-icon");
-
-    if(!elemento.classList.contains("desativar-produto")){
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
+        selecionarProduto.classList.toggle("desativar-produto");
+        selecionarIcone.classList.toggle("desativar-icone");
     } else {
-        
-        for(let i = 0; i < produtos.length; i++){
-            if (!produtos[i].classList.contains("desativar-produto")){
-                produtos[i].classList.toggle("desativar-produto");
-                icones[i].classList.toggle("desativar-icone");
-            }
-        }
-        
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
+        selecionarProduto.classList.toggle("desativar-produto");
+        selecionarIcone.classList.toggle("desativar-icone");
     }
-    finalizar_pedido();
+    
+    finalizarPedido();
 }
-function selecionar_sobremesa(elemento){
 
-    const produtos = document.querySelectorAll(".produto-sobremesa");
-    const icones = document.querySelectorAll(".produto-sobremesa ion-icon");
+function finalizarPedido(){
+    const principais = document.querySelectorAll(".principal li > div");
+    const bebidas = document.querySelectorAll(".bebida li > div");
+    const sobremesas = document.querySelectorAll(".sobremesa li > div");
+   
+    let produtoPrincipalSelecionado = false;
+    let produtoBebidaSelecionado = false;
+    let produtoSobremesaSelecionado = false;
 
-    const produto_icone = elemento.querySelector("ion-icon");
-
-    if(!elemento.classList.contains("desativar-produto")){
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
-    } else {
-        
-        for(let i = 0; i < produtos.length; i++){
-            if (!produtos[i].classList.contains("desativar-produto")){
-                produtos[i].classList.toggle("desativar-produto");
-                icones[i].classList.toggle("desativar-icone");
-            }
-        }
-        
-        elemento.classList.toggle("desativar-produto");
-        produto_icone.classList.toggle("desativar-icone");
-    }
-    finalizar_pedido();
-}
-function finalizar_pedido(){
-    const principais = document.querySelectorAll(".produto-principal");
-    const bebidas = document.querySelectorAll(".produto-bebida");
-    const sobremesas = document.querySelectorAll(".produto-sobremesa");
-
-    let produto_principal_selecionado = false;
-    let produto_bebida_selecionado = false;
-    let produto_sobremesa_selecionado = false;
-
-    let index_principal;
-    let index_bebida;
-    let index_sobremesa; 
+    let indexPrincipal;
+    let indexBebida;
+    let indexSobremesa; 
 
     for(let i = 0; i < principais.length; i++){
         if (!principais[i].classList.contains("desativar-produto")){
-            produto_principal_selecionado = true;
-            index_principal = i;
+            produtoPrincipalSelecionado = true;
+            indexPrincipal = i;
         }
     }
     for(let a = 0; a < bebidas.length; a++){
         if (!bebidas[a].classList.contains("desativar-produto")){
-           produto_bebida_selecionado = true;
-           index_bebida = a;
+           produtoBebidaSelecionado = true;
+           indexBebida = a;
         }
     }
     for(let b = 0; b < sobremesas.length; b++){
         if (!sobremesas[b].classList.contains("desativar-produto")){
-            produto_sobremesa_selecionado = true;
-            index_sobremesa = b;
+            produtoSobremesaSelecionado = true;
+            indexSobremesa = b;
         }
     }
+
     const botao = document.querySelector("button");
     let saida = [];
 
-    if ((produto_principal_selecionado === true) && (produto_bebida_selecionado === true) && (produto_sobremesa_selecionado === true)){
+    if ( (produtoPrincipalSelecionado === true) && (produtoBebidaSelecionado === true) && 
+    (produtoSobremesaSelecionado === true) ){
         botao.classList.remove("desativar-botao");
         botao.innerHTML = "Fechar pedido";
         botao.style.fontWeight = "700";
@@ -118,80 +75,82 @@ function finalizar_pedido(){
         saida.push(false);
     }
     
-    saida.push(index_principal);
-    saida.push(index_bebida);
-    saida.push(index_sobremesa);
+    saida.push(indexPrincipal);
+    saida.push(indexBebida);
+    saida.push(indexSobremesa);
+    console.log(saida);
     return saida;
 }
-function fechar_pedido(){
-    const botao = document.querySelector("button");
-    const vetor = finalizar_pedido();
+
+function fecharPedido(){
+    const vetor = finalizarPedido();
     
-    const tudo_pronto = vetor[0];
-    const index_principal = vetor[1];
-    const index_bebida = vetor[2];
-    const index_sobremesa = vetor[3];
+    const tudoCerto = vetor[0];  // as três categorias do cardápio foram selecionadas
+    const indexPrincipal = vetor[1];
+    const indexBebida = vetor[2];
+    const indexSobremesa = vetor[3];
 
-    const principal = document.querySelectorAll(".produto-principal");
-    const bebida = document.querySelectorAll(".produto-bebida");
-    const sobremesa = document.querySelectorAll(".produto-sobremesa");;
+    const principal = document.querySelectorAll(".principal li > div");
+    const bebida = document.querySelectorAll(".bebida li > div");
+    const sobremesa = document.querySelectorAll(".sobremesa li > div");;
 
-    const principal_selecionado = principal[index_principal];
-    const bebida_selecionado = bebida[index_bebida];
-    const sobremesa_selecionado = sobremesa[index_sobremesa];
+    const principalSelecionado = principal[indexPrincipal];
+    const bebidaSelecionado = bebida[indexBebida];
+    const sobremesaSelecionado = sobremesa[indexSobremesa];
 
-    const principal_valor = parseFloat(principal_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));   
-    const bebida_valor = parseFloat(bebida_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
-    const sobremesa_valor = parseFloat(sobremesa_selecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
-    const final_valor = (Number(principal_valor.toFixed(2)) + Number(bebida_valor.toFixed(2)) + Number(sobremesa_valor.toFixed(2))).toFixed(2);
+    const principalValor = parseFloat(principalSelecionado.querySelector(".preco span").innerHTML.replace(',', '.'));   
+    const bebidaValor = parseFloat(bebidaSelecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
+    const sobremesaValor = parseFloat(sobremesaSelecionado.querySelector(".preco span").innerHTML.replace(',', '.'));
+    const totalValor = ( Number(principalValor.toFixed(2)) + Number(bebidaValor.toFixed(2)) + 
+    Number(sobremesaValor.toFixed(2)) ).toFixed(2);
 
-    const principal_nome = principal_selecionado.querySelector("h3").innerHTML;
-    const bebida_nome = bebida_selecionado.querySelector("h3").innerHTML;
-    const sobremesa_nome = sobremesa_selecionado.querySelector("h3").innerHTML;
+    const principalNome = principalSelecionado.querySelector("h3").innerHTML;
+    const bebidaNome = bebidaSelecionado.querySelector("h3").innerHTML;
+    const sobremesaNome = sobremesaSelecionado.querySelector("h3").innerHTML;
 
-    const pedido_linha1 = "Olá, gostaria de fazer o pedido:";
-    const pedido_linha2 = "- Prato: " + principal_nome;
-    const pedido_linha3 = "- Bebida: " + bebida_nome;
-    const pedido_linha4 = "- Sobremesa: " + sobremesa_nome;
-    const pedido_linha5 = "Total: R$ " + final_valor;
+    const pedidoLinha1 = "Olá, gostaria de fazer o pedido:";
+    const pedidoLinha2 = "- Prato: " + principalNome;
+    const pedidoLinha3 = "- Bebida: " + bebidaNome;
+    const pedidoLinha4 = "- Sobremesa: " + sobremesaNome;
+    const pedidoLinha5 = "Total: R$ " + totalValor;
 
-    const mensagem_linha1 = encodeURIComponent(pedido_linha1);
-    const mensagem_linha2 = encodeURIComponent(pedido_linha2);
-    const mensagem_linha3 = encodeURIComponent(pedido_linha3);
-    const mensagem_linha4 = encodeURIComponent(pedido_linha4);
-    const mensagem_linha5 = encodeURIComponent(pedido_linha5);
+    const mensagemLinha1 = encodeURIComponent(pedidoLinha1);
+    const mensagemLinha2 = encodeURIComponent(pedidoLinha2);
+    const mensagemLinha3 = encodeURIComponent(pedidoLinha3);
+    const mensagemLinha4 = encodeURIComponent(pedidoLinha4);
+    const mensagemLinha5 = encodeURIComponent(pedidoLinha5);
 
-    const mensagem = mensagem_linha1 +  "%0D%0A" + mensagem_linha2 + "%0D%0A" + mensagem_linha3 
-    + "%0D%0A" + mensagem_linha4 + "%0D%0A" + mensagem_linha5; 
+    const mensagem = mensagemLinha1 +  "%0D%0A" + mensagemLinha2 + "%0D%0A" + mensagemLinha3 
+    + "%0D%0A" + mensagemLinha4 + "%0D%0A" + mensagemLinha5; 
 
-    if(tudo_pronto){
-        const seletor_confirmacao = document.querySelector(".confirmar-pedido");
-        seletor_confirmacao.classList.toggle("esconder");
-        const principal_confirmacao_nome = seletor_confirmacao.querySelector("li:first-of-type span:first-of-type");
-        const principal_confirmacao_valor = seletor_confirmacao.querySelector("li:first-of-type span:last-of-type");
-        const bebida_confirmacao_nome = seletor_confirmacao.querySelector("li:nth-of-type(2) span:first-of-type");
-        const bebida_confirmacao_valor = seletor_confirmacao.querySelector("li:nth-of-type(2) span:last-of-type");
-        const sobremesa_confirmacao_nome = seletor_confirmacao.querySelector("li:nth-of-type(3) span:first-of-type");
-        const sobremesa_confirmacao_valor = seletor_confirmacao.querySelector("li:nth-of-type(3) span:last-of-type");
-        const final_valor_confirmacao = seletor_confirmacao.querySelector("li:nth-of-type(4) span:last-of-type");
+    if(tudoCerto){
+        const seletorConfirmacao = document.querySelector(".confirmar-pedido");
+        seletorConfirmacao.classList.toggle("esconder");
+        const principalConfirmacaoNome = seletorConfirmacao.querySelector("li:first-of-type span:first-of-type");
+        const principalConfirmacaoValor = seletorConfirmacao.querySelector("li:first-of-type span:last-of-type");
+        const bebidaConfirmacaoNome = seletorConfirmacao.querySelector("li:nth-of-type(2) span:first-of-type");
+        const bebidaConfirmacaoValor = seletorConfirmacao.querySelector("li:nth-of-type(2) span:last-of-type");
+        const sobremesaConfirmacaoNome = seletorConfirmacao.querySelector("li:nth-of-type(3) span:first-of-type");
+        const sobremesaConfirmacaoValor = seletorConfirmacao.querySelector("li:nth-of-type(3) span:last-of-type");
+        const totalValorConfirmacao = seletorConfirmacao.querySelector("li:nth-of-type(4) span:last-of-type");
 
-        principal_confirmacao_nome.innerHTML = principal_nome;
-        principal_confirmacao_valor.innerHTML = principal_valor.toFixed(2);
-        bebida_confirmacao_nome.innerHTML = bebida_nome;
-        bebida_confirmacao_valor.innerHTML = bebida_valor.toFixed(2);
-        sobremesa_confirmacao_nome.innerHTML = sobremesa_nome;
-        sobremesa_confirmacao_valor.innerHTML = sobremesa_valor.toFixed(2);
-        final_valor_confirmacao.innerHTML = final_valor;
+        principalConfirmacaoNome.innerHTML = principalNome;
+        principalConfirmacaoValor.innerHTML = principalValor.toFixed(2);
+        bebidaConfirmacaoNome.innerHTML = bebidaNome;
+        bebidaConfirmacaoValor.innerHTML = bebidaValor.toFixed(2);
+        sobremesaConfirmacaoNome.innerHTML = sobremesaNome;
+        sobremesaConfirmacaoValor.innerHTML = sobremesaValor.toFixed(2);
+        totalValorConfirmacao.innerHTML = totalValor;
     }
 
     return mensagem;
 }
 
-function finalizar_confirmar(){
-    const mensagem = fechar_pedido();
+function finalizarConfirmar(){
+    const mensagem = fecharPedido();
     window.open("https://wa.me/5521986201196?text=" + mensagem);
 }
-function finalizar_cancelar(){
-    const seletor_confirmacao = document.querySelector(".confirmar-pedido");
-    seletor_confirmacao.classList.toggle("esconder");
+function finalizarCancelar(){
+    const seletorConfirmacao = document.querySelector(".confirmar-pedido");
+    seletorConfirmacao.classList.toggle("esconder");
 }
