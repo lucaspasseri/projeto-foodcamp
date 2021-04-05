@@ -80,13 +80,14 @@ ion-icon {
     font-family: var(--fonte-roboto);
     background-color: #FFF;
     margin-right: 25px;
+    margin-bottom: 20px;
     border-radius: 15px;
     height: 230px;
 }
 
 .produto {
     border-radius: 15px;
-    box-shadow: inset 0 0 0 8px var(--verde-confirmacao);
+    box-shadow: inset 0 0 0 8px var(--verde-confirmacao), 0 6px 8px lightslategray;
 }
 
 .principal li div div, .bebida li div div, .sobremesa li div div {
