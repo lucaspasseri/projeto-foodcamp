@@ -120,7 +120,7 @@ ion-icon {
     font-family: var(--fonte-roboto);
     position: fixed;
     z-index: 1;
-    bottom: 0;
+    top: 533px;
     left: 0;
 }
 button {
@@ -145,7 +145,7 @@ button {
     background-color: #cbcbcb;
 }
 .confirmar-pedido {
-    height: 1120px;
+    height: 1122px;
     width: var(--width-mobile);
     background-color: #FFFFFFDD;
     position: absolute;
