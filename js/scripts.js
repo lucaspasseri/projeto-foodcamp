@@ -1,7 +1,4 @@
 function selecionar(categoria, index){
-
-    console.log(categoria);
-    console.log(index);
     
     const selecionarCategoria = document.querySelector(categoria);
     const selecionarProdutos = selecionarCategoria.querySelectorAll(" li > div"); 
@@ -28,6 +25,7 @@ function selecionar(categoria, index){
 }
 
 function finalizarPedido(){
+    
     const principais = document.querySelectorAll(".principal li > div");
     const bebidas = document.querySelectorAll(".bebida li > div");
     const sobremesas = document.querySelectorAll(".sobremesa li > div");
@@ -150,6 +148,7 @@ function finalizarConfirmar(){
     const mensagem = fecharPedido();
     window.open("https://wa.me/5521986201196?text=" + mensagem);
 }
+
 function finalizarCancelar(){
     const seletorConfirmacao = document.querySelector(".confirmar-pedido");
     seletorConfirmacao.classList.toggle("esconder");
